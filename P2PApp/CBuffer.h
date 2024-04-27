@@ -14,6 +14,7 @@ public:
 	}
 
 	CBuffer() :CBuffer(DEF_BUFF_LEN) {}
+	virtual ~CBuffer() { delete[]m_pBuffer; m_pBuffer = nullptr; } 
 	unsigned char* GetCurBuff() { return m_pBuffer + m_used; }
 	unsigned int   GetCufBuffLen() { return m_total - m_used; }
 	unsigned int   GetBuffLen() { return m_bufLen; }
